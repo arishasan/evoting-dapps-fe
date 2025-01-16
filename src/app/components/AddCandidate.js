@@ -77,11 +77,6 @@ const AddCandidate = () => {
   const handleAddCandidate = async () => {
     if (name) {
         // await tambahKandidat(name); // Panggil fungsi tambahKandidat dari web3.js
-
-        // if (jumlahKandidat >= 5) {
-        //     alert('Maksimal hanya bisa menambahkan 5 kandidat saja!');
-        //     return;
-        // }
         try {
             const contract = await getContractWithSigner();
             const tx = await contract.addKandidat(name); // Mengirim transaksi

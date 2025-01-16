@@ -135,10 +135,13 @@
   "deployedLinkReferences": {},
   "networks": {
     "1": {
-      "address": "0x73eccD6288e117cAcA738BDAD4FEC51312166C1A"
+      "address": "0x8464135c8F25Da09e49BC8782676a84730C318bC"
     },
     "1337": {
-      "address": "0x73eccD6288e117cAcA738BDAD4FEC51312166C1A"
+      "address": "0x8464135c8F25Da09e49BC8782676a84730C318bC"
+    },
+    "31337": {
+      "address": "0x8464135c8F25Da09e49BC8782676a84730C318bC"
     }
   }
 }
