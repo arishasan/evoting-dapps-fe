@@ -110,7 +110,7 @@ const AddCandidate = () => {
             <li
                 key={index}
             >
-                <span>- {candidate.nama}</span>
+                <span>- {candidate.nama} (Jumlah Suara: {candidate.count})</span>
             </li>
             ))}
         </ul>
