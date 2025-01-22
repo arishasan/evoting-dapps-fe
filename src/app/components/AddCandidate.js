@@ -3,7 +3,7 @@
 // import ethers from 'ethers';
 import { BrowserProvider, JsonRpcProvider } from "ethers";
 import { useState, useEffect } from 'react';
-import { getContractWithSigner, getContract } from '../utils/web3';
+import { getContractWithSigner, getContract, connectWallet } from '../utils/web3';
 
 const AddCandidate = () => {
 
@@ -14,11 +14,12 @@ const AddCandidate = () => {
   const [jumlahKandidat, setJumlahKandidat] = useState(0);
 
   // Alamat admin yang diizinkan
-  const adminAddress = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';
+  const adminAddress = '0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC';
 //   const adminAddress = '0xA8Ea0a8121B355169FC8aeB02e4D0476E66b9b9e'; // Alamat user metamask
 //   const adminAddress = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8'; // Alamat user hardhat
 
   useEffect(() => {
+    connectWallet();
     const callAll = async () => {
         await fetchCandidates();
     }

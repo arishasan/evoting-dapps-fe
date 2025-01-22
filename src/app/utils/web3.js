@@ -3,6 +3,30 @@ import PemilihanContract from '../contracts/Pemilihan.json';
 
 let provider;
 let contract;
+let walletAddress;
+
+const connectWallet = async () => {
+    if (typeof window.ethereum !== "undefined") {
+        try {
+        // Request wallet connection
+        const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts",
+        });
+
+        // Set wallet address
+        walletAddress = accounts[0];
+
+        // Optional: Set up Ethers provider
+        // const provider = new ethers.providers.Web3Provider(window.ethereum);
+        // const signer = provider.getSigner();
+        // console.log("Signer:", signer);
+        } catch (error) {
+        console.error("Connection failed:", error);
+        }
+    } else {
+        alert("MetaMask is not installed. Please install it to use this feature.");
+    }
+};
 
 // Deteksi apakah MetaMask tersedia
 if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined') {
@@ -41,4 +65,6 @@ const getContract = async () => {
     return contract;
 };
 
-export { provider, getContract, getContractWithSigner };
+
+
+export { provider, getContract, getContractWithSigner, connectWallet };

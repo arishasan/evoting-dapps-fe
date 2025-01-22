@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { getContractWithSigner, getContract } from '../utils/web3';
+import { getContractWithSigner, getContract, connectWallet } from '../utils/web3';
 import { BrowserProvider, JsonRpcProvider } from "ethers";
 
 const VoteCandidate = () => {
@@ -46,6 +46,7 @@ const VoteCandidate = () => {
     };
 
     useEffect(() => {
+        connectWallet();
         checkConnectionAndFetchCandidates();
     }, []);
         
